@@ -11,7 +11,10 @@ spring:
     password: admin 
 server:
   port: 8201  
-  
+eureka:
+  instance:
+    prefer-ip-address: true 
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}  
 eureka:
   client:
     service-url:
